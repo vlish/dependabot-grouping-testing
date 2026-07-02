@@ -1,0 +1,23 @@
+version: 2
+updates:
+  - package-ecosystem: "npm"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+
+    # Setting this to 0 disables regular version-update PRs entirely.
+    # Dependabot security-update PRs are governed separately and are NOT
+    # blocked by this limit — they will still be opened as needed.
+    open-pull-requests-limit: 0
+
+    groups:
+      # All security updates for devDependencies are batched into a single PR.
+      # The `applies-to: security-updates` key is what makes this group target
+      # security PRs rather than regular version-update PRs.
+      dev-security-updates:
+        applies-to: security-updates
+        dependency-type: "development"
+
+    # Production dependencies intentionally have NO group defined.
+    # Dependabot will therefore open one individual security-update PR
+    # per vulnerable production package (axios, minimist, path-parse).
