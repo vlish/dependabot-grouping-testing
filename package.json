@@ -1,0 +1,20 @@
+{
+  "name": "dependabot-grouping-test",
+  "version": "1.0.0",
+  "description": "Dummy project to validate Dependabot security-update grouping behavior",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "axios": "0.21.1",
+    "minimist": "1.2.5",
+    "path-parse": "1.0.6"
+  },
+  "devDependencies": {
+    "glob-parent": "5.1.1",
+    "hosted-git-info": "2.8.8",
+    "lodash": "4.17.20",
+    "node-fetch": "2.6.1"
+  }
+}
